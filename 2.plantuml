@@ -1,0 +1,72 @@
+@startuml
+
+interface Pet {
+    + feed()
+    + play()
+}
+
+class Dog {
+    + feed()
+    + play()
+}
+
+class Cat {
+    + feed()
+    + play()
+}
+
+class Fish {
+    + feed()
+    + play()
+}
+
+interface PetService {
+    + provideService()
+}
+
+class GroomingService {
+    + provideService()
+}
+
+class BoardingService {
+    + provideService()
+}
+
+class TrainingService {
+    + provideService()
+}
+
+interface PetStore {
+    + sellPet()
+}
+
+class SimplePetStore {
+    + sellPet()
+}
+
+interface PaymentProcessor {
+    + processPayment()
+}
+
+class CashPaymentProcessor {
+    + processPayment()
+}
+
+class CreditCardPaymentProcessor {
+    + processPayment()
+}
+
+Pet <|.. Dog
+Pet <|.. Cat
+Pet <|.. Fish
+
+PetService <|.. GroomingService
+PetService <|.. BoardingService
+PetService <|.. TrainingService
+
+PetStore <|.. SimplePetStore
+
+PaymentProcessor <|.. CashPaymentProcessor
+PaymentProcessor <|.. CreditCardPaymentProcessor
+
+@enduml
